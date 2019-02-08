@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="uk-background-secondary uk-light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--UIkit Stylesheet-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+    <!--Materilize Stylesheet-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <title>EZ Train Schedule</title>
+</head>
+
+
+
+<body>
+
+    <!--Container-->
+    <div class="uk-container uk-align-center">
+
+        <!--First Div-->
+        <div class="uk-align-center">
+            <h2 class="uk-heading-line uk-text-center"><span>EZ Train Schedule</span></h2>
+        </div>
+
+        <!--Results Table Below-->
+        <div>
+          <table class="uk-table uk-table-striped uk-position-top-center" style="margin-top: 125px; width: 792px">
+            <caption><h6>Current Train Schedule</h6></caption>  
+            <thead>
+                <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>First Train Time</th>
+                    <th>Frequency(min)</th>
+                </tr>
+            </thead>
+            <tbody>
+            <!--Dynamyicly created search results will be inserted below, example row shown below-->
+                <tr>
+                    <td>Train 1</td>
+                    <td>Chicago</td>
+                    <td>0800</td>
+                    <td>30</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!--Add Train div-->
+        <div class="uk-position-center" style="width:792px; margin-top: 150px">
+            <caption><h6>Add Train</h6></caption>
+            <br>
+            <form>
+                <div class="uk-margin-small">
+                    <input class="uk-input uk-form-small" type="text" placeholder="Train Name">
+                </div>
+                <div class="uk-margin-small">
+                    <input class="uk-input uk-form-small" type="text" placeholder="Destination">
+                </div>
+                <div class="uk-margin-small">
+                    <input class="uk-input uk-form-small" type="text" placeholder="First Train Time (HH:mm - military time)">
+                </div>
+                <div class="uk-margin-small">
+                    <input class="uk-input uk-form-small" type="text" placeholder="Frequency (min)">
+                </div>
+            </form>
+
+            <p uk-margin>
+                    <button class="uk-button uk-button-default">Submit</button>
+            </p>
+        </div>
+
+
+
+        <!--Footer Below-->
+        <footer class="uk-position-bottom-center">
+            <h6 class="uk-light"></h6>
+        </footer>
+    </div>
+    <!--End Container-->
+
+    <!-- Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <!--Popper-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <!--Materialize JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+    <!--JQuery and JS-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</body>
+
+
+
+</html>
