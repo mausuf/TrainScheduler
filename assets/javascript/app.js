@@ -1,38 +1,29 @@
-// var now = moment(); //now 
-// var start = moment("03:05 AM", "hh:mm A"); // today at 3AM
-// var frequency = 10;
+// <!-- TODO: Add SDKs for Firebase products that you want to use
+//      https://firebase.google.com/docs/web/setup#config-web-app -->
+  
+// Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB5UqWswE4zYQ9sQTehaW1GC9l0zZWLUng",
+    authDomain: "traintimetablescheduler.firebaseapp.com",
+    databaseURL: "https://traintimetablescheduler.firebaseio.com",
+    projectId: "traintimetablescheduler",
+    storageBucket: "traintimetablescheduler.appspot.com",
+    messagingSenderId: "662671356543",
+    appId: "1:662671356543:web:233e20187cc54c6a"
+  };
 
-// var minutesElapsed = now.diff(start, "minutes");
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
-// var stopsElapsed = Math.floor(minutesElapsed / frequency);
+var trainData = firebase.database();
 
-// var nextStopMinutes = (stopsElapsed + 1) * frequency;
+$("#addTrainBtn").on("click",function(){
+  var trainName = $("#trainNameInput").val().trim();
+  var destination = $("#destinationInput").val().trim();
+  var firstTrain = moment($("#firstTrainInput").val().trim(),"HH:mm").subtract(10,"years").format("X");
+  var frequency = $("#frequencyInput").val().trim();
 
-// start.add(nextStopMinutes, "minutes");
+  console.log(firstTrain);
+  return false;
 
-// console.log(start.format("hh:mm A"));
-
-
-
-
-/* <body>
-
-<div id="empty-div"></div>
-
-<script type="text/javascript">
-  var targetDiv = document.getElementById("empty-div");
-  targetDiv.textContent = "Hello friends!";
-  var newDiv = document.createElement("div");
-  newDiv.textContent = "A pleasure to meet you!";
-  targetDiv.appendChild(newDiv);
-  // We then apply that CSS to our newDiv.
-  newDiv.setAttribute("class", "fancy");
-</script>
-
-</body> */
-
-
-var targetTableBody = document.getElementById("tableBody");
-targetTableBody.textContext = "Hello";
-var newDiv = document.createElement("div");
-newDiv.textContent = "A pleasure to meet you!";
+})

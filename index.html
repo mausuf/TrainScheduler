@@ -13,7 +13,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <!--Firebase-->
     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-    <title>EZ Train Schedule</title>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <!-- Moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <title>Train Scheduler</title>
 </head>
 
 
@@ -25,12 +28,12 @@
 
         <!--First Div-->
         <div class="uk-align-center">
-            <h2 class="uk-heading-line uk-text-center"><span><!---Title goes here--></span></h2>
+            <h2 class="uk-heading-line uk-text-center"><span>Train Timetable</span></h2>
         </div>
 
         <!--Results Table Below-->
         <div>
-          <table class="uk-table uk-table-striped uk-position-top-center" style="margin-top: 125px; width: 792px">
+          <table id="trainTable" class="table uk-table uk-table-striped uk-position-top-center" style="margin-top: 125px; width: 792px">
             <caption><h6>Current Train Schedule</h6></caption>  
             <thead>
                 <tr class="tableHeader">
@@ -60,21 +63,21 @@
             <br>
             <form>
                 <div class="uk-margin-small">
-                    <input class="uk-input uk-form-small" type="text" placeholder="Train Name">
+                    <input class="uk-input uk-form-small form-control" type="text" placeholder="Train Name" id="trainNameInput">
                 </div>
                 <div class="uk-margin-small">
-                    <input class="uk-input uk-form-small" type="text" placeholder="Destination">
+                    <input class="uk-input uk-form-small form-control" type="text" placeholder="Destination" id="destinationInput">
                 </div>
                 <div class="uk-margin-small">
-                    <input class="uk-input uk-form-small" type="text" placeholder="First Train Time (HH:mm - military time)">
+                    <input class="uk-input uk-form-small form-control" type="text" placeholder="First Train Time (HH:mm - military time)" id="firstTrainInput">
                 </div>
                 <div class="uk-margin-small">
-                    <input class="uk-input uk-form-small" type="text" placeholder="Frequency (min)">
+                    <input class="uk-input uk-form-small form-control" type="text" placeholder="Frequency (min)" id="frequencyInput">
                 </div>
             </form>
 
             <p uk-margin>
-                    <button class="uk-button uk-button-default">Submit</button>
+                    <button id="addTrainBtn" class="btn uk-button uk-button-default" type="submit">Submit</button>
             </p>
         </div>
 
@@ -103,7 +106,6 @@
     
 
     </script>
-
     <!--Additional Scripts-->
     <!--Popper-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
