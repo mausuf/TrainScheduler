@@ -11,15 +11,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--CSS-->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Bungee&display=swap" rel="stylesheet">
     <!--Firebase-->
-    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script> -->
     <!-- Moment.js -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <title>Train Scheduler</title>
 </head>
-
-
 
 <body>
 
@@ -32,23 +32,25 @@
         </div>
 
         <!--Results Table Below-->
-        <div>
+        <div class="resultsDiv">
           <table id="trainTable" class="table uk-table uk-table-striped uk-position-top-center" style="margin-top: 125px; width: 792px">
-            <caption><h6>Current Train Schedule</h6></caption>  
+            <caption><h5 class="titles">Current Train Schedule</h5></caption>  
             <thead>
                 <tr class="tableHeader">
                     <th>Train Name</th>
                     <th>Destination</th>
-                    <th>First Train Time</th>
-                    <th>Frequency(min)</th>
+                    <th>Frequency (min)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
                 </tr>
             </thead>
             <tbody class="tableBody">
                 <tr>
                     <td>Train 1</td>
                     <td>Chicago</td>
-                    <td>0800</td>
                     <td>30</td>
+                    <td>04:30</td>
+                    <td>45</td>
                 </tr>
             <!--Dynamyicly created search results will be inserted below, example row shown below-->
             </tbody>
@@ -58,30 +60,25 @@
         <div  id="tableBody"></div>
 
         <!--Add Train div-->
-        <div class="uk-position-center" style="width:792px; margin-top: 150px">
-            <caption><h6>Add Train</h6></caption>
+        <div class="addTrainDiv uk-position-center" style="width:792px; margin-top: 150px">
+            <caption><h5 class="titles">Add Train</h5></caption>
             <br>
             <form>
-                <div class="uk-margin-small">
+                <div class="uk-margin-small form-group">
                     <input class="uk-input uk-form-small form-control" type="text" placeholder="Train Name" id="trainNameInput">
                 </div>
-                <div class="uk-margin-small">
+                <div class="uk-margin-small form-group">
                     <input class="uk-input uk-form-small form-control" type="text" placeholder="Destination" id="destinationInput">
                 </div>
-                <div class="uk-margin-small">
+                <div class="uk-margin-small form-group">
                     <input class="uk-input uk-form-small form-control" type="text" placeholder="First Train Time (HH:mm - military time)" id="firstTrainInput">
                 </div>
-                <div class="uk-margin-small">
+                <div class="uk-margin-small form-group">
                     <input class="uk-input uk-form-small form-control" type="text" placeholder="Frequency (min)" id="frequencyInput">
                 </div>
-            </form>
-
-            <p uk-margin>
-                    <button id="addTrainBtn" class="btn uk-button uk-button-default" type="submit">Submit</button>
-            </p>
+                <button id="addTrainBtn" class="btn uk-button uk-button-default" type="submit">Submit</button>
+            </form>       
         </div>
-
-
 
         <!--Footer Below-->
         <footer class="uk-position-bottom-center">
@@ -92,20 +89,7 @@
 
     <!-- Firebase-->
     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-    <script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyBJkA8g_cwEUfSw19b-S25ZoSbXSBpdb5c",
-        authDomain: "trainscheduler-555.firebaseapp.com",
-        databaseURL: "https://trainscheduler-555.firebaseio.com",
-        projectId: "trainscheduler-555",
-        storageBucket: "",
-        messagingSenderId: "1060335798625"
-    };
-    firebase.initializeApp(config);
-    
 
-    </script>
     <!--Additional Scripts-->
     <!--Popper-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"

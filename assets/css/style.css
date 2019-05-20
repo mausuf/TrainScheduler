@@ -1,0 +1,15 @@
+*, .titles {
+    font-family: 'Bungee', cursive;
+}
+
+#trainTable, .addTrainDiv {
+    position: relative!important;
+}
+
+#trainTable {
+    margin-top: -10px!important;
+}
+
+.addTrainDiv {
+    padding-top: 50px;
+}
